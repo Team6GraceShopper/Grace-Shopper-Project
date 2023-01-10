@@ -1,7 +1,7 @@
 {
-  "name": "fs-app-template",
+  "name": "walmars",
   "version": "2.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "Your one stop shop for all things in the galaxy'!",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
