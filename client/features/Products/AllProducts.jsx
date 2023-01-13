@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Axios from "axios";
-import React from "react";
 
 function AllProducts() {
   const [state, setState] = useState([]);
