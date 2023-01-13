@@ -12,7 +12,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const Container = styled.div`
   display: flex;
-  background-color: #9254C8;
+  background-color: #5e17eb;
   color: #fff;
   border-radius: 20px;
   width: 100vw;
