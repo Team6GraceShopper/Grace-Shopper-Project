@@ -42,7 +42,6 @@ const AppRoutes = () => {
         <Route path='/searchresults' element={<SearchResults/>} />
         <Route path='/product' element={<SingleProduct/>} />
      
-        <Route path='/checkout' element={<Checkout/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/additems' element={<AddItems/>} />
@@ -56,6 +55,7 @@ const AppRoutes = () => {
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
           />
+          <Route path='/checkout' element={<Checkout/>} />
    <Route path='/cart' element={<Cart/>} />
         <Route path='/signup' element={<SignUp/>} />
         <Route path='/allproducts' element={<AllProducts/>} />
