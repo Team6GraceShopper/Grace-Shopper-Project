@@ -10,3 +10,12 @@ router.get('/', async (req, res, next) => {
     next(err);
   }
 });
+
+router.post('/cart', async (req, res, next) => {
+  try {
+    const product = await Products.create(req.body);
+    res.status(201).json(product);
+  } catch (err) {
+    next(err);
+  }
+});

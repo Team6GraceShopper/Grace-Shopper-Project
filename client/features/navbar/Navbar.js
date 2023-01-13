@@ -7,7 +7,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import styled  from 'styled-components';
-
+import Container from 'react-bootstrap/Container'
+import {LinkContainer} from 'react-router-bootstrap'
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
@@ -26,8 +27,9 @@ const Navbar = () => {
     {isLoggedIn ? (
       <TopNavBar>
         <ContainerForTop>
-          <img src='walmars7.png' height='200px' width='200px'></img>
-          
+<LinkContainer link to="/">
+          <img src='walmars7.png' height='200px' width='200px'></img> 
+          </LinkContainer> 
       <InputBox />
 
       <Link>
@@ -73,7 +75,9 @@ const Navbar = () => {
       <TopNavBar>
         <ContainerForTop>
 
-          <img src='walmars7.png' height='200px' width='200px'></img>
+        <LinkContainer link to="/">
+           <img src='walmars7.png' height='200px' width='200px'></img> 
+          </LinkContainer> 
       <InputBox />
 
       <Link>
@@ -119,7 +123,6 @@ const Navbar = () => {
 };
 
 const TopNavBar = styled.nav`
-
 `
 
 const ContainerForTop = styled.div`
@@ -172,7 +175,6 @@ border-radius: 5px;
 `
 
 const MenuContainer = styled.div`
-
 `
 const MenuTrigger = styled.div`
 `
@@ -204,7 +206,6 @@ z-index: 99;
 
 
 const DropdownItemsBox = styled.div`
-
 `
 
 const DropdownItems = styled.ol`
@@ -219,28 +220,6 @@ font-weight: bolder;
 }
 `
 
-const TheHr = styled.hr`
-width: 95%;
-color: yellow;
-`
-
 
 
 export default Navbar;
-
-
-// {isLoggedIn ? (
-//   <div>
-//     {/* The navbar will show these links after you log in */}
-//     <Link to="/home">Home</Link>
-//     <button type="button" onClick={logoutAndRedirectHome}>
-//       Logout
-//     </button>
-//   </div>
-// ) : (
-//   <div>
-//     {/* The navbar will show these links before you log in */}
-//     <Link to="/login">Login/SignUp</Link>
-//     {/* <Link to="/signup">Sign Up</Link> */}
-//   </div>
-// )}
