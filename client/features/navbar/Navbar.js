@@ -58,9 +58,8 @@ const Navbar = () => {
           </MenuTrigger>
 
           {open ? <DropDownMenu>
-            <Link><DropdownItems>Contact</DropdownItems></Link>
-            <Link><DropdownItems>About</DropdownItems></Link>
-            <Link><DropdownItems>Creators</DropdownItems></Link>
+            <Link to='/contact'><DropdownItems>Contact</DropdownItems></Link>
+            <Link to='/about'><DropdownItems>About</DropdownItems></Link>
             <Link><DropdownItems onClick={logoutAndRedirectHome}>Logout</DropdownItems></Link>
           </DropDownMenu> : <div></div>}
   
@@ -88,14 +87,14 @@ const Navbar = () => {
       </Link>
 
     
-      <Link to='/cart'>
+      <Link to='/login'>
       <ShoppingCartButton>
         <ShoppingCartIcon/>
       </ShoppingCartButton>
       </Link>
       
 
-          <Link to='/accountmanagment'>
+          <Link to='/login'>
           <AccountButton>
             <PersonIcon/>
           </AccountButton>
@@ -109,14 +108,14 @@ const Navbar = () => {
           </MenuTrigger>
 
           {open ? <DropDownMenu>
-            <Link><DropdownItems>Contact</DropdownItems></Link>
-            <Link><DropdownItems>About</DropdownItems></Link>
-            <Link><DropdownItems>Creators</DropdownItems></Link>
+            <Link to='/contact'><DropdownItems>Contact</DropdownItems></Link>
+            <Link to='/about'><DropdownItems>About</DropdownItems></Link>
           </DropDownMenu> : <div></div>}
 
         </MenuContainer>
 
         </ContainerForTop>
+        <TheHr color='#5e17eb'></TheHr>
       </TopNavBar>
       )}
       </div>
@@ -135,6 +134,8 @@ align-items: center;
 const InputBox = styled.input`
 height: 30px;
 width: 50%;
+border-radius: 5px;
+border: none;
 `
 
 const SearchButton = styled.button`
@@ -143,7 +144,7 @@ width: 8vw;
 background-color: #5e17eb;
 cursor: pointer;
 border: none;
-border-radius: 5%;
+border-radius: 5px;
 &:hover {
   background-color: #7A42EB;
 }
@@ -155,7 +156,7 @@ width: 8vw;
 background-color: #5e17eb;
 cursor: pointer;
 border: none;
-border-radius: 5%;
+border-radius: 5px;
 &:hover {
   background-color: #7A42EB;
 }
@@ -167,7 +168,7 @@ width: 8vw;
 background-color: #5e17eb;
 cursor: pointer;
 border: none;
-border-radius: 5%;
+border-radius: 5px;
 &:hover {
   background-color: #7A42EB;
 }
@@ -183,14 +184,14 @@ background-color: #5e17eb;
 height: 30px;
 cursor: pointer;
 border: none;
-border-radius: 5%;
+border-radius: 5px;
 &:hover {
   background-color: #7A42EB;
 }
 `
 
 const DropDownMenu = styled.div`
-position: absolute;
+position: fixed;
 border: 1px solid black;
 width: 100px;
 background-color: #5e17eb;
@@ -200,6 +201,7 @@ justify-content: center;
 flex-direction: column;
 margin-top: 10px;
 border-radius: 5%;
+z-index: 99;
 `
 
 
