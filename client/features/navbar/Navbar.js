@@ -7,8 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import styled  from 'styled-components';
-import Container from 'react-bootstrap/Container'
-// import {LinkContainer} from 'react-router-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
@@ -27,9 +26,9 @@ const Navbar = () => {
     {isLoggedIn ? (
       <TopNavBar>
         <ContainerForTop>
-{/* <LinkContainer link to="/"> */}
+<LinkContainer to="/">
           <img src='walmars7.png' height='200px' width='200px'></img> 
-          {/* </LinkContainer>  */}
+          </LinkContainer> 
       <InputBox />
 
       <Link>
@@ -75,9 +74,9 @@ const Navbar = () => {
       <TopNavBar>
         <ContainerForTop>
 
-        {/* <LinkContainer link to="/"> */}
+        <LinkContainer to="/">
            <img src='walmars7.png' height='200px' width='200px'></img> 
-          {/* </LinkContainer>  */}
+          </LinkContainer> 
       <InputBox />
 
       <Link>
