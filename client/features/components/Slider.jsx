@@ -79,6 +79,7 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 80%;
+  border-radius: 20px;
 `;
 
 const InfoContainer = styled.div`

@@ -12,8 +12,10 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const Container = styled.div`
   display: flex;
-  background-color: #a31acb;
+  background-color: #9254C8;
   color: #fff;
+  border-radius: 20px;
+  width: 100vw;
 `;
 
 const Left = styled.div`
@@ -41,6 +43,7 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
 const Center = styled.div`

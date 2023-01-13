@@ -14,6 +14,7 @@ import About from "../features/info/About.jsx";
 import Contact from "../features/info/Contact.jsx";
 import AddItems from "../features/admin/AddItems.jsx";
 import EditItems from "../features/admin/EditItems.jsx";
+import ProductList from "../features/productlist/ProductList.jsx";
 
 /**
  * COMPONENT
@@ -43,7 +44,7 @@ const AppRoutes = () => {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/additems' element={<AddItems/>} />
         <Route path='/edititems' element={<EditItems/>} />
-
+        <Route path='/productlist' element={<ProductList/>} />
       </Routes>
       ) : (
         <Routes>
