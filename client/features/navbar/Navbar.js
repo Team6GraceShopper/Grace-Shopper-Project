@@ -115,7 +115,6 @@ const Navbar = () => {
         </MenuContainer>
 
         </ContainerForTop>
-        <TheHr color='#5e17eb'></TheHr>
       </TopNavBar>
       )}
       </div>
@@ -135,7 +134,7 @@ const InputBox = styled.input`
 height: 30px;
 width: 50%;
 border-radius: 5px;
-border: none;
+border-color: #5e17eb;
 `
 
 const SearchButton = styled.button`
@@ -204,7 +203,6 @@ border-radius: 5%;
 z-index: 99;
 `
 
-
 const DropdownItemsBox = styled.div`
 `
 
@@ -219,6 +217,7 @@ font-weight: bolder;
   color: white;
 }
 `
+
 
 
 

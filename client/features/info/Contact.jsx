@@ -19,7 +19,7 @@ function Contact() {
       </InfoBox>
 
 
-      <CompanyImg src='group-company-photo.png' height='50%'/>
+      <CompanyImg src='group-company-photo.png'/>
       </ContactBox>
 
     </ContactContainer>
@@ -43,17 +43,23 @@ display: flex;
 border: 1px solid red;
 justify-content: space-around;
 height: 80%;
+align-items: center;
 `
 const InfoBox = styled.div`
 border: 1px solid black;
 height: 100%;
+width: 50%;
 `
 const NameAndEmail = styled.div`
+display: flex;
+justify-content: space-around;
 `
 
 const NameInput = styled.input`
+width: 40%;
 `
 const EmailInput = styled.input`
+width: 40%;
 `
 
 const TextArea = styled.textarea`
@@ -65,7 +71,8 @@ const SendButton = styled.button`
 `
 
 const CompanyImg = styled.img`
-border: 1px solid black;
-border-radius: 2px;
+// border: 5px solid black;
+border-radius: 5px;
+height: 40vh
 `
 export default Contact
