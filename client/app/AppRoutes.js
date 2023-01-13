@@ -8,7 +8,7 @@ import SearchResults from '../features/Products/SearchResults.jsx';
 import Home from '../features/home/Home';
 import { me } from './store';
 import SignUp from '../features/signup/SignUp';
-import Cart from '../features/shop/Cart.jsx';
+import Cart from '../features/shop/Cart.jsx';   
 import Checkout from '../features/shop/Checkout.jsx';
 import About from '../features/info/About.jsx';
 import Contact from '../features/info/Contact.jsx';
@@ -20,7 +20,7 @@ import EditItems from '../features/admin/EditItems.jsx';
  */
 
 const AppRoutes = () => {
-  const isLoggedIn = useSelector((state) => !!state.auth.me.id);
+  const isLoggedIn = useSelector((state) => !state.auth.me.id);
   const dispatch = useDispatch();
 
   useEffect(() => {
