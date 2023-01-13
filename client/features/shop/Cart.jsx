@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Helmet} from 'react-helmet-async'
 import {Store} from '../../Store'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import MessageBox from '../components/MessageBox'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
@@ -22,7 +23,7 @@ return(
       <Col md={8}>
       {cartItems.length === 0 ? (
         <MessageBox>
-          Cart is empty. <Link to ="/">Get in bitch we're goin shopping</Link> 
+          Cart is empty. <Link to ="/AllProducts">Get in bitch we're goin shopping</Link> 
         </MessageBox>
       ) : (
       <ListGroup>
@@ -35,7 +36,7 @@ return(
                 alt={item.image}
                 className='img-fluid rounded img-thumbnail'>
                 </img> {' '}
-                <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                <Link to={`/singleProduct/${item.id}`}>{item.name}</Link>
               </Col>
               <Col md={3}>
                 <Button variant='light' disabled={item.quantity === 1}>

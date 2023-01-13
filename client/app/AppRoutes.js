@@ -33,17 +33,18 @@ const AppRoutes = () => {
     <div>
       {!isLoggedIn ? (
         <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route path="/accountmanagement" element={<AccountManagement />} />
-          <Route path="/searchresults" element={<SearchResults />} />
-          <Route path="/product" element={<SingleProduct />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/additems" element={<AddItems />} />
-          <Route path="/edititems" element={<EditItems />} />
-          <Route path="/productlist" element={<ProductList />} />
-        </Routes>
+
+        <Route path="/*" element={<Home />} />
+        <Route path="/accountmanagement" element={<AccountManagement />} />
+        <Route path='/searchresults' element={<SearchResults/>} />
+        <Route path='/product' element={<SingleProduct/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/contact' element={<Contact/>} />
+        <Route path='/additems' element={<AddItems/>} />
+        <Route path='/edititems' element={<EditItems/>} />
+        <Route path='/productlist' element={<ProductList/>} />
+      </Routes>
+
       ) : (
         <Routes>
           <Route path="/*" element={<Home />} />
@@ -51,14 +52,17 @@ const AppRoutes = () => {
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
           />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/allproducts" element={<AllProducts />} />
-          <Route path="/searchresults" element={<SearchResults />} />
-          <Route path="/product" element={<SingleProduct />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+
+          <Route path='/checkout' element={<Checkout/>} />
+   <Route path='/cart' element={<Cart/>} />
+        <Route path='/signup' element={<SignUp/>} />
+        <Route path='/allproducts' element={<AllProducts/>} />
+        <Route path='/searchresults' element={<SearchResults/>} />
+        <Route path='/product' element={<SingleProduct/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/contact' element={<Contact/>} />
+      </Routes>
+
       )}
     </div>
   );
