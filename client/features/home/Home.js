@@ -1,5 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
+import Slider from "../components/Slider.jsx";
+import Categories from "../components/Categories.jsx";
 
 /**
  * COMPONENT
@@ -10,10 +12,8 @@ const Home = (props) => {
   return (
     //home page
     <div>
-      <h3>Welcome, {username}</h3>
-      <h1>Home page</h1>
-      
-      
+      <Slider />
+      <Categories />
     </div>
   );
 };
