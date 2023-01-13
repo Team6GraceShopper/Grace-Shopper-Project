@@ -35,7 +35,6 @@ border-radius: 10px;
 `
 const AddToCart = styled.button`
 background-color: #53546F;
-color: white;
 width: 15vw;
 height: 3vw;
 font-size: 2vw;
