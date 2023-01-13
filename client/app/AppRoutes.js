@@ -33,7 +33,7 @@ const AppRoutes = () => {
 
   return (
     <div>
-      {isLoggedIn ? (
+      {!isLoggedIn ? (
         <Routes>
 
 
