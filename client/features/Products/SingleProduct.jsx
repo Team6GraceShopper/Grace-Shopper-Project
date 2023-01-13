@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Body = styled.div`
 background-color: #1F2041;
-color: #E7EE8C;
+color: gold;
 text-shadow: 3px 3px 2px black;
 display: flex;
 flex-direction: column;
@@ -23,7 +23,6 @@ flex-direction: column;
 position: relative;
 `;
 const DescriptionBlock = styled.div`
-background-color: #616375;
 color: aqua;
 `
 const PictureAndRightBlock = styled.div`
@@ -35,18 +34,16 @@ width: 40vw;
 border-radius: 10px;
 `
 const AddToCart = styled.button`
-background-color: gold;
+background-color: #53546F;
 color: white;
-text-shadow: 4px 4px 2px darkblue;
 width: 15vw;
 height: 3vw;
 font-size: 2vw;
 position: absolute;
 bottom: 20px;
 right: 20px;
-border: 4px solid gray;
-border-radius: 10px;
-box-shadow: 3px 3px 3px 3px black;
+border: 2px solid gold;
+color: gold;
 `
 const Rating = styled.div`
 width: 20vw;
