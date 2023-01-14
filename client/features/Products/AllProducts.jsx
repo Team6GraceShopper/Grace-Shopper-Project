@@ -23,9 +23,7 @@ const AllProducts = () => {
   return (
     <Container>
       {state.map((product) => (
-        <Product key={product.id}>
-          <img src={product.imgUrl} alt={product.name} />
-        </Product>
+        <Product key={product.id} item={product} />
       ))}
     </Container>
   );
