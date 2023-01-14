@@ -100,6 +100,16 @@ async function seed() {
       rating: 9,
     }),
     Products.create({
+      name: 'Space Jeep',
+      price: 199,
+      imgUrl: 'productImages/spacejeep.png',
+      inStock: false,
+      description: 'Every purchase space jeep comes with a free kiss from Mr. Beast',
+      quantity: 15,
+      category: 'C',
+      rating: 9,
+    }),
+    Products.create({
       name: 'Alan Aly Cail Arcade Machine',
       price: 300,
       imgUrl: 'productImages/Alan-Aly-Cail-Arcade-Machine.png',
