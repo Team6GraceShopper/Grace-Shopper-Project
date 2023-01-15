@@ -25,9 +25,11 @@ const Navbar = () => {
       {isLoggedIn ? (
         <TopNavBar>
           <ContainerForTop>
-            <LinkContainer to="/">
-              <img src="walmars7.png" height="200px" width="200px"></img>
-            </LinkContainer>
+            <LogoCursor>
+              <LinkContainer to="/">
+                <img src="walmars7.png" height="200px" width="200px"></img>
+              </LinkContainer>
+            </LogoCursor>
             <InputBox />
 
             <Link>
@@ -78,9 +80,11 @@ const Navbar = () => {
       ) : (
         <TopNavBar>
           <ContainerForTop>
-            <LinkContainer to="/">
-              <img src="walmars7.png" height="200px" width="200px"></img>
-            </LinkContainer>
+            <LogoCursor>
+              <LinkContainer to="/">
+                <img src="walmars7.png" height="200px" width="200px"></img>
+              </LinkContainer>
+            </LogoCursor>
             <InputBox />
 
             <Link>
@@ -141,6 +145,7 @@ const InputBox = styled.input`
   width: 50%;
   border-radius: 5px;
   border-color: #5e17eb;
+  cursor: pointer;
 `;
 
 const SearchButton = styled.button`
@@ -153,6 +158,10 @@ const SearchButton = styled.button`
   &:hover {
     background-color: #7a42eb;
   }
+`;
+
+const LogoCursor = styled.div`
+  cursor: pointer;
 `;
 
 const ShoppingCartButton = styled.button`
