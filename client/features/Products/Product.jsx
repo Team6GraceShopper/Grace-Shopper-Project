@@ -64,9 +64,19 @@ const Icon = styled.div`
   }
 `;
 
+const Title = styled.div`
+  position: absolute;
+  top: 5px;
+  left: 70px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #A149FA;
+`;
+
 const Product = ({ item }) => {
   return (
     <Container>
+     <Title>{item.name}</Title>
       <Circle />
       <Image src={item.imgUrl} />
       <Info>
