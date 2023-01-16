@@ -3,6 +3,7 @@ import styled from "styled-components";
 import KeyboardDoubleArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowLeftOutlined";
 import KeyboardDoubleArrowRightOutlinedIcon from "@mui/icons-material/KeyboardDoubleArrowRightOutlined";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 //dummy data for slider
@@ -130,7 +131,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Link to="/allproducts"><Button>SHOW NOW</Button></Link>
             </InfoContainer>
           </Slide>
         ))}

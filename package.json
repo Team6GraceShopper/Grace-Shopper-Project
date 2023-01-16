@@ -1,7 +1,7 @@
 {
   "name": "walmars",
   "version": "2.0.0",
-  "description": "The out of this world eccomerce store'!",
+  "description": "Out of this world eccomerce store!",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
