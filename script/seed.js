@@ -131,7 +131,7 @@ async function seed() {
       rating: 7,
     }),
     Products.create({
-      name: 'Axios Shirt',
+      name: 'Space Suit',
       price: 12,
       imgUrl: 'productImages/Axios-Shirt.png',
       inStock: true,
@@ -237,7 +237,7 @@ async function seed() {
       rating: 9,
     }),
     Products.create({
-      name: 'Linux_ethereum',
+      name: 'Ethereum Crystal',
       price: 300,
       imgUrl: 'productImages/Linux_ethereum_4k.png',
       inStock: true,
@@ -247,7 +247,7 @@ async function seed() {
       rating: 6,
     }),
     Products.create({
-      name: 'SpaceX',
+      name: 'Futuristic SpaceX',
       price: 300,
       imgUrl: 'productImages/spaceship1.png',
       inStock: true,
@@ -267,7 +267,7 @@ async function seed() {
       rating: 6,
     }),
     Products.create({
-      name: 'SpaceXY',
+      name: 'Futuristic SpaceShipXY',
       price: 300,
       imgUrl: 'productImages/spaceship_8K.png',
       inStock: true,
