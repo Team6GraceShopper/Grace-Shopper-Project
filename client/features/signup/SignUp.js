@@ -88,13 +88,12 @@ const SignUp = () => {
           <Input onChange={e => setAddress(e.target.value)} placeholder="address" />
           <Input onChange={e => setPhoneNumber(e.target.value)} placeholder="telephone" />
           <Button type="submit">Create Account</Button>
+          <Button>Already have an account?</Button>
           <Agreement>
             By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
+            data in accordance with the <b>PRIVACY POLICY.</b>
           </Agreement>
         </Form>
-        <Button>Create Account</Button>
-        <Button>Already have an account?</Button>
       </Wrapper>
     </Container>
   );
