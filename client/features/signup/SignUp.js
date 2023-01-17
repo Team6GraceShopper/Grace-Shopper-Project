@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addUser } from "./signupSlice";
+
 
 const Container = styled.div`
   width: 100vw;
@@ -56,19 +59,35 @@ const Button = styled.button`
 `;
 
 const SignUp = () => {
+
+  const dispatch = useDispatch();
+
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [address, setAddress] = useState('');
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  dispatch(addUser({username, password, firstName, lastName, email, phoneNumber, address}))
+ }
+
   return (
     <Container>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
-          <Input placeholder="address" />
-          <Input placeholder="telephone" />
+        <Form onSubmit={handleSubmit}>
+          <Input onChange={e => setFirstName(e.target.value)} placeholder="name" />
+          <Input onChange={e => setLastName(e.target.value)} placeholder="last name" />
+          <Input onChange={e => setUserName(e.target.value)} placeholder="username" />
+          <Input onChange={e => setEmail(e.target.value)} placeholder="email" />
+          <Input onChange={e => setPassword(e.target.value)} placeholder="password" />
+          <Input onChange={e => setAddress(e.target.value)} placeholder="address" />
+          <Input onChange={e => setPhoneNumber(e.target.value)} placeholder="telephone" />
+          <Button type="submit">Create Account</Button>
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
