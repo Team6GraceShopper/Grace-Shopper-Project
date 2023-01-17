@@ -60,11 +60,11 @@ const ProductRating = styled.p`
 
 function SingleProduct() {
   const [data, setData] = useState([]);
-  const productId = useParams().productId;
+  const {productId} = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
+      const result = await axios.get(
         `http://localhost:8080/api/product/${productId}`
       );
       setData(result.data);

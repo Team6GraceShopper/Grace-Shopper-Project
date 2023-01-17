@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import styled from "styled-components";
 import { LinkContainer } from "react-router-bootstrap";
 
+
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const Navbar = () => {
     dispatch(logout());
     navigate("/login");
   };
+  
+
 
   const [open, setOpen] = useState(false);
 
