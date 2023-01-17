@@ -39,6 +39,7 @@ flex-direction: column;
 `
 const TitleContact = styled.h1`
 align-self: center;
+font-family: "Trebuchet MS", Tahoma, sans-serif;
 `
 const ContactBox = styled.div`
 display: flex;
