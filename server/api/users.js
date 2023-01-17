@@ -9,11 +9,7 @@ router.get('/', async (req, res, next) => {
       // explicitly select only the id and username fields - even though
       // users' passwords are encrypted, it won't help if we just
       // send everything to anyone who asks!
-<<<<<<< Updated upstream
       attributes: ['id', 'username', 'password', 'firstName', 'lastName', 'email', 'phoneNumber', 'address']
-=======
-      attributes: ['id', 'username', 'firstName', 'lastName', 'email', 'phoneNumber', 'address']
->>>>>>> Stashed changes
     })
     res.json(users)
   } catch (err) {
@@ -25,23 +21,9 @@ router.get('/', async (req, res, next) => {
 router.get('/:userId', async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.userId, {
-<<<<<<< Updated upstream
       attributes: ['id', 'username', 'password', 'firstName', 'lastName', 'email', 'phoneNumber', 'address']
-=======
-      attributes: ['id', 'username', 'firstName', 'lastName', 'email', 'phoneNumber', 'address']
->>>>>>> Stashed changes
     })
     res.json(user)
-  } catch (err) {
-    next(err)
-  }
-})
-
-// POST /api/users
-router.post('/', async (req, res, next) => {
-  try {
-    const user = await User.create(req.body)
-    res.status(201).json(user)
   } catch (err) {
     next(err)
   }
