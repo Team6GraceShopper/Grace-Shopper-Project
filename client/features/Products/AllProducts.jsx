@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ProductContainer = styled.div`
   display: flex;
@@ -49,10 +50,9 @@ function AllProducts() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch the data from the API route and update
-    fetch("http://localhost:8080/api/product")
-      .then((res) => res.json())
-      .then((data) => setData(data))
+    axios
+      .get("http://localhost:8080/api/product/")
+      .then((res) => setData(res.data))
       .catch((error) => {
         setError(error);
       });
