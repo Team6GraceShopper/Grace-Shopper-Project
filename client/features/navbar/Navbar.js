@@ -68,6 +68,9 @@ const Navbar = () => {
                   <Link to="/about">
                     <DropdownItems>About</DropdownItems>
                   </Link>
+                  <Link to="/allproducts">
+                    <DropdownItems>All Products</DropdownItems>
+                  </Link>
                   <Link>
                     <DropdownItems onClick={logoutAndRedirectHome}>
                       Logout
@@ -122,6 +125,9 @@ const Navbar = () => {
                   </Link>
                   <Link to="/about">
                     <DropdownItems>About</DropdownItems>
+                  </Link>
+                  <Link to="/allproducts">
+                    <DropdownItems>All Products</DropdownItems>
                   </Link>
                 </DropDownMenu>
               ) : (
@@ -206,8 +212,8 @@ const MenuButton = styled.button`
 `;
 
 const DropDownMenu = styled.div`
-  position: fixed;
-  width: 100px;
+  position: absolute;
+  width: 150px;
   background-color: #5e17eb;
   right: 21px;
   display: flex;
