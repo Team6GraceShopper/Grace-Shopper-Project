@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom";
 const ProductContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 2em;
   padding: 1em;
   background-color: white;
