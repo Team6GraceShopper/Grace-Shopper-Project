@@ -204,7 +204,6 @@ const MenuButton = styled.button`
 
 const DropDownMenu = styled.div`
   position: fixed;
-  border: 1px solid black;
   width: 100px;
   background-color: #5e17eb;
   right: 21px;
