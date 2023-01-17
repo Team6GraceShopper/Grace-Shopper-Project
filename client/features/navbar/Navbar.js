@@ -9,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import styled from "styled-components";
 import { LinkContainer } from "react-router-bootstrap";
 
+
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const Navbar = () => {
     dispatch(logout());
     navigate("/login");
   };
+  
+
 
   const [open, setOpen] = useState(false);
 
@@ -64,6 +67,9 @@ const Navbar = () => {
                   </Link>
                   <Link to="/about">
                     <DropdownItems>About</DropdownItems>
+                  </Link>
+                  <Link to="/allproducts">
+                    <DropdownItems>All Products</DropdownItems>
                   </Link>
                   <Link>
                     <DropdownItems onClick={logoutAndRedirectHome}>
@@ -119,6 +125,9 @@ const Navbar = () => {
                   </Link>
                   <Link to="/about">
                     <DropdownItems>About</DropdownItems>
+                  </Link>
+                  <Link to="/allproducts">
+                    <DropdownItems>All Products</DropdownItems>
                   </Link>
                 </DropDownMenu>
               ) : (
@@ -203,8 +212,8 @@ const MenuButton = styled.button`
 `;
 
 const DropDownMenu = styled.div`
-  position: fixed;
-  width: 100px;
+  position: absolute;
+  width: 150px;
   background-color: #5e17eb;
   right: 21px;
   display: flex;

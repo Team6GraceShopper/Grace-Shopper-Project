@@ -2,6 +2,10 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
+const jwt = require('jsonwebtoken')
+const bodyParser = require('body-parser')
+const data = require('../script/seed')
+
 module.exports = app
 
 // logging middleware
@@ -41,3 +45,19 @@ app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
+
+app.use(bodyParser.json());
+
+app.post('/api/products', (req, res) => { //generates the list of products in the cart
+  let products = [], id = null;
+  let cart = JSON.parse(req.body.cart);
+  if (!cart) return res.json(products)
+  for (var i = 0; i < data.products.length; i++) {
+    id = data.products[i].id.toString();
+    if (cart.hasOwnProperty(id)) {
+      data.products[i].qty = cart[id]
+      products.push(data.products[i]);
+    }
+  }
+  return res.json(products);
+});
