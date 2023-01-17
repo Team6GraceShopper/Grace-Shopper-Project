@@ -16,6 +16,7 @@ import Contact from "../features/info/Contact.jsx";
 import AddItems from "../features/admin/AddItems.jsx";
 import EditItems from "../features/admin/EditItems.jsx";
 
+
 /**
  * COMPONENT
  */
@@ -37,6 +38,7 @@ const AppRoutes = () => {
           <Route path="/searchresults" element={<SearchResults />} />
           <Route path="/product" element={<SingleProduct />} />
           <Route path="/about" element={<About />} />
+          <Route path="/product/:productId/" element={<SingleProduct />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/additems" element={<AddItems />} />
           <Route path="/edititems" element={<EditItems />} />
@@ -54,7 +56,7 @@ const AppRoutes = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/allproducts" element={<AllProducts />} />
           <Route path="/searchresults" element={<SearchResults />} />
-          <Route path="/product" element={<SingleProduct />} />
+          <Route path="/product/:productId/" element={<SingleProduct />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
