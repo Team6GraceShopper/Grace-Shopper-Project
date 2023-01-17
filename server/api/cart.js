@@ -10,6 +10,7 @@ router.get('/', async (req, res, next) => {
     next(err);
   }
 });
+<<<<<<< Updated upstream
 
 router.post('/cart', async (req, res, next) => {
   try {
@@ -19,3 +20,5 @@ router.post('/cart', async (req, res, next) => {
     next(err);
   }
 });
+=======
+>>>>>>> Stashed changes
