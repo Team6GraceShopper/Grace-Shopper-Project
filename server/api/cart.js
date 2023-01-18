@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { models: { Cart } } = require('../db');
 module.exports = router;
 
-router.get('/', async (req, res, next) => {
+router.get('/:cartId', async (req, res, next) => {
   try {
     const cart = await Cart.findAll();
     res.json(cart);
@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post('/cart', async (req, res, next) => {
+router.post('/:cartId', async (req, res, next) => {
   try {
     const product = await Products.create(req.body);
     res.status(201).json(product);
