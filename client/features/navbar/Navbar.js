@@ -35,7 +35,7 @@ const Navbar = () => {
             </LogoCursor>
             <InputBox />
 
-            <Link>
+            <Link to="/allproducts">
               <SearchButton>
                 <SearchIcon />
               </SearchButton>
@@ -93,7 +93,7 @@ const Navbar = () => {
             </LogoCursor>
             <InputBox />
 
-            <Link>
+            <Link to="/allproducts">
               <SearchButton>
                 <SearchIcon />
               </SearchButton>
