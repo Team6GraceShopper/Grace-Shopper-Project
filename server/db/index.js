@@ -9,9 +9,11 @@ const CartProducts = require('./models/CartProducts')
 
 //associations could go here!
 User.hasOne(Cart);
+
 Cart.belongsTo(User);
 Cart.belongsToMany(Products, {through: CartProducts});
 Products.belongsToMany(Cart, {through: CartProducts});
+
 
 Cart.getProducts = async function(){
   const data = await Products.findAll({
