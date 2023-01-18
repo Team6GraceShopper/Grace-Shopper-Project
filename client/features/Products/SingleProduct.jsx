@@ -3,61 +3,109 @@ import styled from "styled-components";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const ProductContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  margin: 2em;
-  padding: 1em;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 0px #ccc;
-`;
-
-const ProductImage = styled.img`
-  width: 100%;
-  max-width: 400px;
-  margin: 0.5em 0;
-`;
-
-const ProductTitle = styled.h1`
-  font-size: 2em;
-  margin: 0.5em 0;
-`;
 
 const ProductPrice = styled.p`
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 0.5em 0;
-`;
+font-size: 1.5em;
+font-weight: bold;
+margin: 20px;
 
-const ProductDescription = styled.p`
-  font-size: 1.2em;
-  margin: 0.5em 0;
-`;
+
+  `;
+
 
 const ProductStock = styled.p`
   font-size: 1.2em;
   font-weight: bold;
-  margin: 0.5em 0;
-`;
+  margin: 20px;
 
-const ProductQuantity = styled.p`
-  font-size: 1.2em;
-  margin: 0.5em 0;
-`;
 
-const ProductCategory = styled.p`
+  `;
+  
+  const ProductQuantity = styled.p`
   font-size: 1.2em;
-  margin: 0.5em 0;
-`;
+  margin: 20px;
 
-const ProductRating = styled.p`
+
+  `;
+
+  const StatsBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  `
+  
+  const ProductCategory = styled.p`
   font-size: 1.2em;
-  font-weight: bold;
-  margin: 0.5em 0;
+  margin: 20px;
+  `;
+  
+  
+  const Body = styled.div`
+  background-color: #1F2041;
+  color: gold;
+  text-shadow: 3px 3px 2px black;
+  display: flex;
+  flex-direction: column;
+  `
+  const Title = styled.h1`
+  margin: 20px;
+  `
+
+const RightBlock = styled.div`
+margin: 20px;
+margin-top: 0px;
+margin-bottom: 0px;
+width: 47vw;
+padding: 20px;
+display: flex;
+flex-direction: column;
+position: relative;
+background-color: #53546F;
+
 `;
+const DescriptionBlock = styled.div`
+background-color: #53546F;
+color: aqua;
+margin: 20px;
+`
+const PictureAndRightBlock = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+`;
+const Img = styled.img`
+width: 47vw;
+border-radius: 10px;
+margin: 0 20px;
+`
+const AddToCart = styled.button`
+background-color: #53546F;
+width: 15vw;
+height: 3vw;
+font-size: 2vw;
+position: absolute;
+bottom: 20px;
+right: 20px;
+border: 2px solid gold;
+color: gold;
+`
+const Rating = styled.div`
+width: 20vw;
+align-self: center;
+display: flex;
+flex-direction: column;
+justify-items: center;
+align-items: center;
+margin: 30px;
+padding: 10px;
+gap: -100px;
+text-shadow: 5px 5px 2px black;
+`
+const Stars = styled.div`
+margin-bottom: 10px;
+font-size: 2rem;
+`
 
 function SingleProduct() {
   const [data, setData] = useState([]);
@@ -74,16 +122,42 @@ function SingleProduct() {
   }, []);
 
   return (
-    <ProductContainer>
-      <ProductImage src={data.imgUrl} alt={data.name} />
-      <ProductTitle>{data.name}</ProductTitle>
-      <ProductPrice>Price: {data.price}</ProductPrice>
-      <ProductDescription>{data.description}</ProductDescription>
-      <ProductStock>In stock: {data.inStock ? "Yes" : "No"}</ProductStock>
+    <Body>
+      <ProductCategory>All Products/{data.category}</ProductCategory>
+      <PictureAndRightBlock>
+        <Img src={data.imgUrl} alt={data.name}></Img>
+        <RightBlock>
+      <Title>{data.name}</Title>
+      <Rating>
+        <h3>Rating: {data.rating}/10</h3>
+        <Stars>
+          <span>{data.rating >= 1 ? "★" : "☆"}</span>
+          <span>{data.rating >= 2 ? "★" : "☆"}</span>
+          <span>{data.rating >= 3 ? "★" : "☆"}</span>
+          <span>{data.rating >= 4 ? "★" : "☆"}</span>
+          <span>{data.rating >= 5 ? "★" : "☆"}</span>
+          <span>{data.rating >= 6 ? "★" : "☆"}</span>
+          <span>{data.rating >= 7 ? "★" : "☆"}</span>
+          <span>{data.rating >= 8 ? "★" : "☆"}</span>
+          <span>{data.rating >= 9 ? "★" : "☆"}</span>
+          <span>{data.rating >= 10 ? "★" : "☆"}</span>
+     
+        </Stars>
+      </Rating>
+      <StatsBlock>
+          <ProductStock>{data.inStock ? "In Stock" : "Out of Stock"}</ProductStock>
+          <ProductPrice>Price: ⬦{data.price}</ProductPrice>
       <ProductQuantity>Quantity: {data.quantity}</ProductQuantity>
-      <ProductCategory>Category: {data.category}</ProductCategory>
-      <ProductRating>Rating: {data.rating}</ProductRating>
-    </ProductContainer>
+          <AddToCart>Add To Cart</AddToCart>
+      </StatsBlock>
+        </RightBlock>
+      </PictureAndRightBlock>
+          <DescriptionBlock>
+            <h3>Product Description</h3>
+            <p>{data.description}</p>
+          </DescriptionBlock>
+    </Body>
+
   );
 }
 
