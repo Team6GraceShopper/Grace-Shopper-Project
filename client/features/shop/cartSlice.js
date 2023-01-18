@@ -1,11 +1,36 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import axios from 'axios';
+
+export const getData = createAsyncThunk('cart/getData', async (cartId) => {
+    try {
+        const data = await axios.get(`http://localhost:8080/api/cart/${cartId}`)
+        return data;
+    } 
+    catch(err){
+        console.log(err)
+    }
+})
+
+export const addToTheCart = createAsyncThunk('cart/addToCart', async ({ userId, productId, cartId }) => {
+    try {
+        let {data} = await axios.post(`http://localhost:8080/api/cart/${cartId}`, {userId, productId, cartId});
+        return data;
+    }
+    catch (err){
+        console.log(err)
+    }
+})
 
 const cartSlice = createSlice ({
+
     name: 'cart',
     initialState: {
         cart: [],
     },
     reducers: {
+        getTheData: (state, action) => {
+            state.cart.push(action.payload);
+        },
         addToCart: (state, action) => {
             const itemInCart = state.cart.find((item) => item.id === action.payload.id)
             if(itemInCart) {
@@ -14,25 +39,11 @@ const cartSlice = createSlice ({
                 state.cart.push({...action.payload, quantity: 1})
             }
         },
-        incrementQuantity: (state, action) => {
-            const item = state.cart.find((item) => item.id === action.payload)
-            if (item.quantity === 1) {
-                item.quantity = 1
-            } else {
-                item.quantity--
-            }
-        },
-        removeItem: (state, action) => {
-            const removeItem = state.cart.filter((item) => item.id !== action.payload)
-            state.cart = removeItem
-        },
     },
 });
 
 export const cartReducer = cartSlice.reducer;
 export const {
+    getTheData,
     addToCart,
-    incrementQuantity,
-    decrementQuantity,
-    removeItem,
 } = cartSlice.actions;

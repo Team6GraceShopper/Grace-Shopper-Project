@@ -4,6 +4,10 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addToTheCart } from "../shop/cartSlice";
+import { useSelector } from "react-redux";
+
 
 const ProductContainer = styled.div`
   display: flex;
@@ -49,9 +53,18 @@ function AllProducts() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
 
+  const userId = useSelector((state) => state.auth.me.id);
+
+  const dispatch = useDispatch()
+
+  const handleAddToCart= (e, userId, item, cartId) => {
+    e.preventDefault();
+    dispatch(addToTheCart(userId ,item , cartId))
+  }
+
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/product/")
+      .get("http://localhost:8080/api/product")
       .then((res) => setData(res.data))
       .catch((error) => {
         setError(error);
@@ -78,7 +91,7 @@ function AllProducts() {
               <p>Product Details</p>
             </Icon>
           </Link>
-          <Link to="/cart">
+          <Link onClick={(item) => handleAddToCart(item.id)} to="/cart">
             <Icon>
               <ShoppingCartOutlinedIcon />
               <p>Add to Cart</p>

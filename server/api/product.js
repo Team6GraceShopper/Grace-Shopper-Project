@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { models: { Products } } = require('../db');
+const { models: { Products, CartProducts } } = require('../db');
 module.exports = router;
 
 // GET /api/products
@@ -57,4 +57,34 @@ router.delete('/:productId', async (req, res, next) => {
     next(err);
   }
 });
+
+router.post('/:productId/:cartId', async (req,res, next) => {
+  try {
+    const cart = await Cart.findByPk(req.params.cartId);
+    const cartItem = await CartProducts.findOne({
+    where: {
+    cartId: cart.id,
+    productId: req.params.productId,
+    },
+    });
+    //First need to check if item is already in cart. If it is, add to the quantity.
+    if (cartItem) {
+    res.send(
+    await cartItem.update({
+    quantity: cartItem.quantity+1,
+    })
+    );
+    // Else, create a new CartItem
+    } else {
+    let newCartItem = await CartProducts.create({
+    quantity: 1,
+    productId: req.params.productId,
+    cartId: req.params.cartId,
+    });
+    res.send(await newCartItem);
+    }
+    } catch (error) {
+    console.log(error);
+    }
+})
   

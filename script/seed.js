@@ -2,7 +2,7 @@
 
 const {
   db,
-  models: { User, Products },
+  models: { User, Products , Cart},
 } = require('../server/db');
 /**
  * seed - this function clears the database, updates tables to
@@ -285,7 +285,16 @@ async function seed() {
       category: 'B',
       rating: 6,
     }),
+
+    
   ]);
+
+  const cart = await Promise.all([
+    Cart.create({
+      total: 2,
+    })
+
+  ])
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded successfully`);
