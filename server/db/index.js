@@ -10,6 +10,7 @@ const Cart = require('./models/Cart')
 User.hasOne(Cart);
 Cart.hasOne(User);
 Cart.hasMany(Products);
+Cart.belongsTo(Products);
 Products.belongsTo(Cart);
 
 
