@@ -165,7 +165,7 @@ function SingleProduct() {
             </ProductStock>
             <ProductPrice>Price: ⬦{data.price}</ProductPrice>
             <ProductQuantity>Quantity: {data.quantity}</ProductQuantity>
-            <AddToCart>Add To Cart</AddToCart>
+            <Link to='/cart'><AddToCart>Add To Cart</AddToCart></Link>
           </StatsBlock>
         </RightBlock>
       </PictureAndRightBlock>
