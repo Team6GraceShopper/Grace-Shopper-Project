@@ -30,7 +30,7 @@ const Navbar = () => {
           <ContainerForTop>
             <LogoCursor>
               <LinkContainer to="/">
-                <img src="walmars7.png" height="200px" width="200px"></img>
+                <img src="/walmars7.png" height="200px" width="200px"></img>
               </LinkContainer>
             </LogoCursor>
             <InputBox />

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Cart = require('../db/models/Cart.js');
 const {
   models: { User },
 } = require('../db');
@@ -27,7 +28,19 @@ router.post('/signup', async (req, res, next) => {
 
 router.get('/me', async (req, res, next) => {
   try {
-    res.send(await User.findByToken(req.headers.authorization));
+    const me = await User.findByToken(req.headers.authorization)
+    const cart = await Cart.findOne({
+      where: {
+        userId: me.id
+      }
+    }
+    )
+    me.cartId = cart.id
+
+    res.send({
+      me: me,
+      cartId: cart.id
+    });
   } catch (ex) {
     next(ex);
   }

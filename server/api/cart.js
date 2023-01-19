@@ -1,13 +1,21 @@
 const router = require('express').Router();
-const { models: { Cart } } = require('../db');
+const { models: { Cart , Product} } = require('../db');
 module.exports = router;
 
 router.get('/:cartId', async (req, res, next) => {
   try {
-    const cart = await Cart.findByPk(req.params.cartId);
-    // const products = await cart.getProducts()
-    console.log('this is cart',cart);
-    res.json(cart);
+    const cart = await Cart.findOne(
+      {
+        where:{
+          id: req.params.cartId
+        }
+      })
+    const products = await cart.getProducts()
+
+    res.json({
+      ...cart.dataValues,
+      products
+    });
   } catch (err) {
     next(err);
   }
