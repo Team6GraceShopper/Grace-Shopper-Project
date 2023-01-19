@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import styled from "styled-components";
 import axios from "axios";
+import { getData } from "./cartSlice"
 
 const cart = [
   "item1 khhbvkuvyhbcfdkivyfbvyobfovlyfbvof8uyivbfp8v9bfiuovbFDSp9uvbhfd9pv;dfghvd9spvshv ", "item2", "item3"]
@@ -91,16 +93,40 @@ margin-right: 1rem;
 
 export default function Cart() {
 
+  const cartId = useSelector((state) => {
+    return state.auth.me.cartId
+  })
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getData(cartId))
+  },
+    [cartId]
+  )
+  const products = useSelector((state) => {
+    console.log(state.cart.cart.products)
+    return state.cart.cart.products
+  })
+  const totalPrice = useSelector((state) => {
+    let subTotal = 0
+    for (let product of state.cart.cart.products) {
+      subTotal += product.price
+    }
+    return subTotal
+  })
+
+
+
+
+
   return (
     <Body>
       <Title>Cart</Title>
-      {cart.map((item) => {
-        itemCount++
+      {products.map((item) => {
         return (
-          <ItemBox>
+          <ItemBox key={item.id}>
             <ItemPhotoAndName>
-              <ItemPhoto src="walmars7.png" alt="X"></ItemPhoto>
-              <ItemName>{item}</ItemName>
+              <ItemPhoto src="walmars7.png" alt="Product Image"></ItemPhoto>
+              <ItemName>{item.name}</ItemName>
             </ItemPhotoAndName>
             <QtyAndRemBtn>
               <p>Qty: 1</p>
@@ -111,8 +137,8 @@ export default function Cart() {
       })
       }
       <TotalsAndCheckoutBtn>
-        <TotQty>Total Qty: {itemCount}</TotQty>
-        <TotPrice>Subtotal: ⬦{itemCount * 10}</TotPrice>
+        <TotQty>Total Qty: {products.length}</TotQty>
+        <TotPrice>Subtotal: ⬦{totalPrice}</TotPrice>
         <CheckoutBtn>Checkout</CheckoutBtn>
       </TotalsAndCheckoutBtn>
     </Body>

@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getData = createAsyncThunk('cart/getData', async (cartId) => {
     try {
         const data = await axios.get(`http://localhost:8080/api/cart/${cartId}`)
-        return data;
+        return data.data;
     } 
     catch(err){
         console.log(err)
@@ -25,25 +25,18 @@ const cartSlice = createSlice ({
 
     name: 'cart',
     initialState: {
-        cart: [],
+        cart: {
+            products:[]
+        },
     },
     reducers: {
-        getTheData: (state, action) => {
-            state.cart.push(action.payload);
-        },
-        addToCart: (state, action) => {
-            const itemInCart = state.cart.find((item) => item.id === action.payload.id)
-            if(itemInCart) {
-                itemInCart.quantity++
-            } else {
-                state.cart.push({...action.payload, quantity: 1})
-            }
-        },
+       
     },
+    extraReducers: (builder) => {
+        builder.addCase(getData.fulfilled, (state, action) => {
+            state.cart = action.payload
+        })
+    }
 });
 
-export const cartReducer = cartSlice.reducer;
-export const {
-    getTheData,
-    addToCart,
-} = cartSlice.actions;
+export default cartSlice.reducer;

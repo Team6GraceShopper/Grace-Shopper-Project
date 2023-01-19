@@ -141,7 +141,7 @@ function SingleProduct() {
     <Body>
       <ProductCategory>All Products / {data.category}</ProductCategory>
       <PictureAndRightBlock>
-        <Img src={data.imgUrl} alt={data.name}></Img>
+        <Img src={"/" + data.imgUrl} alt={data.name}></Img>
         <RightBlock>
           <Title>{data.name}</Title>
           <Rating>

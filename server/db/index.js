@@ -14,7 +14,6 @@ Cart.belongsTo(User);
 Cart.belongsToMany(Products, {through: CartProducts});
 Products.belongsToMany(Cart, {through: CartProducts});
 
-
 Cart.getProducts = async function(){
   const data = await Products.findAll({
     include : [
