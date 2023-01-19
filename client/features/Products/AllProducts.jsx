@@ -85,7 +85,7 @@ function AllProducts() {
           <p>{item.description}</p>
           <p>Rating: {item.rating}/10</p>
 
-          <Link to={`/${item.id}`}>
+          <Link to={`/product/${item.id}`}>
             <Icon>
               <SearchOutlinedIcon />
               <p>Product Details</p>

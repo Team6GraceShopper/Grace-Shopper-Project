@@ -29,16 +29,16 @@ Thank you for considering Walmars as your go-to destination for all your shoppin
     <OneImg src='andrew.jpeg' height='100px' width='100px'/>
     </a>
 
-    <a target='_blank' href='https://www.linkedin.com/in/andrewspencer44/'>
-    <OneImg src='andrew.jpeg' height='100px' width='100px'/>
+    <a target='_blank' href='https://www.linkedin.com/in/kylecolangelo/'>
+    <OneImg src='kyle.jpg' height='100px' width='100px'/>
     </a>
 
-    <a target='_blank' href='https://www.linkedin.com/in/andrewspencer44/'>
-    <OneImg src='andrew.jpeg' height='100px' width='100px'/>
+    <a target='_blank' href='https://www.linkedin.com/in/mathis-stone/'>
+    <OneImg src='mathis.jpg' height='100px' width='100px'/>
     </a>
     
     <a target='_blank' href='https://www.linkedin.com/in/andrewspencer44/'>
-    <OneImg src='andrew.jpeg' height='100px' width='100px'/>
+    <OneImg src='walmars7.png' height='100px' width='100px'/>
     </a>
 </ImgBox>
 

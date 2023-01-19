@@ -52,11 +52,16 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: #a555ec;
+  background-color: #5e17eb;
   color: white;
   cursor: pointer;
   border-radius: 20px;
 `;
+
+const DivContainer = styled.div`
+display: flex;
+justify-content: space-around;
+`
 
 const SignUp = () => {
 
@@ -87,8 +92,10 @@ const SignUp = () => {
           <Input onChange={e => setPassword(e.target.value)} placeholder="password" />
           <Input onChange={e => setAddress(e.target.value)} placeholder="address" />
           <Input onChange={e => setPhoneNumber(e.target.value)} placeholder="telephone" />
+          <DivContainer>
           <Button type="submit">Create Account</Button>
           <Button>Already have an account?</Button>
+          </DivContainer>
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY.</b>
