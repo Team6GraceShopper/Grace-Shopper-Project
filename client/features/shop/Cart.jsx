@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from "styled-components";
 import axios from "axios";
 import { getData } from "./cartSlice"
+import { Link } from 'react-router-dom';
 
 const cart = [
   "item1 khhbvkuvyhbcfdkivyfbvyobfovlyfbvof8uyivbfp8v9bfiuovbFDSp9uvbhfd9pv;dfghvd9spvshv ", "item2", "item3"]
@@ -139,7 +140,7 @@ export default function Cart() {
       <TotalsAndCheckoutBtn>
         <TotQty>Total Qty: {products.length}</TotQty>
         <TotPrice>Subtotal: ⬦{totalPrice}</TotPrice>
-        <CheckoutBtn>Checkout</CheckoutBtn>
+        <Link to='/checkout'><CheckoutBtn>Checkout</CheckoutBtn></Link>
       </TotalsAndCheckoutBtn>
     </Body>
   )
