@@ -49,6 +49,13 @@ const Icon = styled.div`
   }
 `;
 
+const Description = styled.p`
+height: 1rem;
+whit-space: no-wrap;
+text-overflow: ellipsis;
+overflow: hidden;
+`
+
 function AllProducts() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -82,7 +89,7 @@ function AllProducts() {
           <h2>{item.name}</h2>
           <p>Price: ${item.price}</p>
           <img src={item.imgUrl} alt={item.name} />
-          <p>{item.description}</p>
+          <Description>{item.description}</Description>
           <p>Rating: {item.rating}/10</p>
 
           <Link to={`/${item.id}`}>
